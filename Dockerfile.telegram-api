@@ -1,0 +1,3 @@
+FROM aiogram/telegram-bot-api:latest
+
+CMD ["telegram-bot-api", "--api-id=REPLACE_WITH_API_ID", "--api-hash=REPLACE_WITH_API_HASH", "--local"]

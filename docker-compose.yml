@@ -1,0 +1,18 @@
+services:
+  telegram-api:
+    image: aiogram/telegram-bot-api:latest
+    command:
+      - --api-id=REPLACE_WITH_NEW_API_ID
+      - --api-hash=REPLACE_WITH_NEW_API_HASH
+      - --local
+    volumes:
+      - telegram-api-data:/var/lib/telegram-bot-api
+
+  bot:
+    build: .
+    depends_on:
+      - telegram-api
+    restart: unless-stopped
+
+volumes:
+  telegram-api-data:
